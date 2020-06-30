@@ -18,9 +18,8 @@ public class ReverseLinkedListBetween {
         //记录m前面的那个节点
         ListNode leftHead = prehead;
         //让leftHead 定位到m前面
-        while (m>1){
+        for(int i=0; i<m-1; i++){
             leftHead = leftHead.next;
-            m--;
         }
         //注意pre不能是leftHead,要不然把leftHead也反转了
         ListNode pre = leftHead.next;
