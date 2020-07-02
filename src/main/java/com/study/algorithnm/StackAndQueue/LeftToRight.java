@@ -34,8 +34,32 @@ public class LeftToRight {
         return stack.isEmpty();
     }
 
+
+    public static boolean leftToRight1(String s){
+        HashMap map = new HashMap();
+        map.put('(', ')');
+        map.put('[', ']');
+        map.put('{', '}');
+
+        Stack<Character> stack = new Stack<Character>();
+        for (int i=0; i<s.length(); i++){
+            char c = s.charAt(i);
+            if (map.containsKey(c)){
+                stack.push((Character) map.get(c));
+            }else {
+                if (stack.size()==0 || stack.pop() != c){
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
     public static void main(String[] args) {
 
+        String s = "[]{}";
+
+        System.out.println(leftToRight1(s));
     }
 
 }
