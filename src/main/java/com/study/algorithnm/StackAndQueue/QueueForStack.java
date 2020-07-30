@@ -3,6 +3,13 @@ package com.study.algorithnm.StackAndQueue;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 队列实现栈
+ * 1，2 {1,2}
+ * q2: {1}  q2: {} q1: {1}
+ * q2{2}  q2{2,1} q1{2,1} q2{}
+ * q2{3}  q2{3,2,1} q2{} q1{3,2,1}
+ */
 public class QueueForStack {
 
     private Queue<Integer> q1;//输出队列
